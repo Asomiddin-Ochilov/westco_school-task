@@ -1,0 +1,130 @@
+.teacher {
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: #ecf0fb;
+     margin-top: 5rem;
+     padding-top: 6%;
+     padding-bottom: 6%;
+     .left {
+          width: 50%;
+          .title {
+               font-weight: 600;
+               font-size: 35px;
+               color: $black;
+               text-transform: capitalize;
+          }
+          .line {
+               width: 20%;
+               height: 5px;
+               background-color: $blue;
+               border-radius: 10px;
+               margin: 2rem 0;
+          }
+          .text {
+               font-size: 20px;
+               width: 70%;
+               margin-bottom: 2rem;
+               color: $gray;
+               font-weight: 400;
+          }
+          button {
+               height: 40px;
+               background-color: $blue;
+               height: 40px;
+               font-weight: 400;
+               font-size: 16px;
+               font-family: "Montserrat", sans-serif;
+               padding: 0 23px;
+               border-radius: 8px;
+               color: white;
+          }
+
+          
+     }
+     .right {
+          width: 40%;
+          height: 500px;
+          border-radius: 20px;
+          background-size: cover;
+          background-position: center;
+          background-image: url("https://www.nureva.com/hs-fs/hubfs/images/blog/education/5-technology-essentials-to-get-students-engaged-in-hybrid-learning/_to-get-students-engaged-in-hybrid-learning-1200x628.jpg?width=1199&quality=low");
+     }
+
+     @media (min-width:1000px) and (max-width:1170px) {
+          .left{
+               width: 58%;
+          }
+          
+         
+        }
+        @media (min-width:799px) and (max-width:1000px) {
+          .left{
+               width: 66%;
+          }
+          .right{
+               width: 34%;
+          }
+            
+           }
+
+           @media (min-width:577px) and (max-width:798px) {
+               padding: 24px;
+               .left{
+                    width: 55%;
+                    .title{
+                         font-size: 28px;
+
+                    }
+                    .text{
+                         font-size: 17px;
+                    }
+
+               }
+               .right{
+                    width: 40%;
+               }
+           }
+           @media (min-width:400px) and (max-width:576px) {
+               padding: 24px;
+               flex-wrap: wrap;
+               .left{
+                    width: 100%;
+                    .title{
+                         font-size: 28px;
+
+                    }
+                    .text{
+                         width: 95%;
+                         font-size: 17px;
+                    }
+
+               }
+               .right{
+                    width: 100%;
+                    margin-top: 20px;
+               }
+           }
+
+           @media (min-width:0) and (max-width:399px) {
+               padding: 15px;
+               flex-wrap: wrap;
+               .left{
+                    width: 100%;
+                    .title{
+                         font-size: 25px;
+
+                    }
+                    .text{
+                         width: 95%;
+                         font-size: 17px;
+                    }
+
+               }
+               .right{
+                    width: 100%;
+                    margin-top: 20px;
+               }
+           }
+}

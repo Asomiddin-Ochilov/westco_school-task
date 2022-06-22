@@ -1,0 +1,105 @@
+.sing_up {
+     width: 100%;
+     height: 100vh;
+     display: grid;
+     grid-template-columns: 350px 1fr;
+     background-color: #e5e5e5;
+     overflow-x: hidden;
+     .left {
+          height: 100vh;
+          background-color: white;
+          padding-top: 35px;
+          .form {
+               padding: 0 25px;
+               .logo {
+                    text-align: center;
+                    img {
+                         width: 80px;
+                         height: 80px;
+                    }
+               }
+          }
+          .line {
+               width: 100%;
+               height: 1px;
+               background-color: #eceaea;
+               margin: 30px 0;
+          }
+          .item {
+               .label {
+                    font-size: 16px;
+                    color: rgba(3, 2, 41, 1);
+                    font-weight: 400;
+                    line-height: 21.82px;
+                    margin-bottom: 8px;
+                    margin-top: 20px;
+               }
+               input {
+                    height: 45px;
+               }
+               .input {
+                    padding-top: 0;
+                    height: 45px !important;
+                    input {
+                         height: 43px;
+                    }
+               }
+          }
+          .footer_block {
+               display: flex;
+               justify-content: space-between;
+               margin-top: 20px;
+               .left_item {
+                    font-size: 14px;
+                    line-height: 19px;
+                    font-weight: 400;
+                    color: #030229;
+               }
+               .right_item {
+                    font-size: 14px;
+                    line-height: 19px;
+                    font-weight: 400;
+                    color: $blue;
+                    cursor: pointer;
+               }
+          }
+          button {
+               width: 100%;
+               height: 45px;
+               border-radius: 10px;
+               background-color: $blue;
+               margin-top: 24px;
+          }
+          .text {
+               line-height: 18px;
+               font-size: 13px;
+               font-weight: 400;
+               margin-top: 20px;
+               white-space: nowrap;
+               text-align: center;
+               color: #030229;
+               span {
+                    color: $blue;
+                    cursor: pointer;
+               }
+          }
+     }
+     .right {
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+               width: 560px;
+               height: 430px;
+          }
+     }
+
+     @media (min-width:0) and (max-width: 400px) {
+          grid-template-columns: 1fr;
+          .right{
+              display: none;
+          }
+    }
+}

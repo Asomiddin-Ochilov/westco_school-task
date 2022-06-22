@@ -1,0 +1,71 @@
+@import "~antd/dist/antd.css";
+@import "./Components";
+@import "../Components/Header/Header";
+@import "../Components/About/About";
+@import "../Components/Courses/courses";
+@import "../Components/Teachers/teacher";
+@import "../Components/Feedbeak/feedbeack";
+@import "../Components/Books/Books";
+@import "../Components/Subscribe/Subscribe";
+@import "../Components/Footer/Footer";
+@import "../Components/Auth/Login/Login";
+@import "../Components/Auth/SingUp/Singup";
+@import "../Components/ErrorsPage/Errors";
+@import "../Components/Loader/loader";
+@import "../Pages/UserPage/user";
+@import "../Pages/UserPage/action/Courses/courses";
+@import "../Pages/UserPage/userAction/Courses/courses";
+@import "../Pages/UserPage/userAction/Courses/courses";
+@import "../Pages/AdminPage/admin";
+@import "../Pages/AdminPage/adminAction/Courses/courses";
+
+* {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+}
+html{
+     scroll-behavior: smooth;
+}
+.app {
+     width: 100%;
+}
+
+.modal_btn{
+     width: fit-content;
+     margin-top: 10px;
+     background-color: $blue;
+     height: 40px;
+     border-radius: 5px;
+     @extend .font;
+     font-size: 16px;
+     color: white;
+}
+
+.page_position{
+     width: 100%;
+     min-height: 80vh;
+     height: fit-content;
+     position: relative;
+}
+
+.ant-tabs-tab-btn{
+     @extend .font;
+     font-size: 16px;
+}
+
+.btn_group{
+     width: 95%;
+     margin-left: 1%;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     button{
+          width: fit-content;
+     }
+}
+
+.select_modal{
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+}

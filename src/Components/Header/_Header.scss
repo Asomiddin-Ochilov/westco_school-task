@@ -1,0 +1,803 @@
+.header {
+     margin-top: 100px;
+     .navbar {
+          width: 100%;
+          height: 80px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: fixed;
+          top: 0;
+          background-color: white;
+          z-index: 1;
+          padding: 0 6%;
+          left: 0;
+          .logo {
+               font-weight: 700;
+               color: $blue;
+               font-size: 28px;
+               display: flex;
+               align-items: center;
+               img {
+                    width: 60px;
+                    height: 60px;
+                    margin-right: 10px;
+               }
+          }
+
+          .nav-link {
+               a {
+                    font-size: 19px;
+                    font-weight: 400;
+                    margin: 0 15px;
+                    line-height: 18px;
+                    color: $gray;
+                    position: relative;
+                    &::after{
+                         content: '';
+                         width: 0;
+                         height: 2px;
+                         background-color: $blue;
+                         position: absolute;
+                         bottom: -10px;
+                         opacity: 0.6;
+                         left: 0;
+                         transition: 0.3s;
+                    }
+                    &:hover{
+
+                         &::after{
+                              width: 100%;
+
+                         }
+
+                    }
+               }
+          }
+
+          .right {
+               .drop_menu{
+                    display: block;
+               }
+               .user_img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    cursor: pointer;
+               }
+               button {
+                    height: 40px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    font-family: "Montserrat", sans-serif;
+                    padding: 0 23px;
+                    border-radius: 8px;
+                    background-color: $blue;
+                    color: white;
+                    &:first-child {
+                         margin-right: 20px;
+                         color: $black;
+                         background-color: transparent;
+                    }
+               }
+
+               .response_navbar{
+                    display: none;
+               }
+
+               
+          }
+
+     }
+     .header_block {
+          background-image: linear-gradient(70deg, #2575e64f, #2575e60e),
+               url("https://media.istockphoto.com/photos/teenage-boy-using-laptop-and-doing-homework-picture-id172856683?k=20&m=172856683&s=612x612&w=0&h=Ury7326cKGvnpY38xD84aMudyN2lFsXZkgPbTXWOHUo=");
+          width: 100%;
+          height: 500px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          margin-top: 10px;
+          border-radius: 30px;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          .left {
+               width: 50%;
+               padding-left: 50px;
+               padding-top: 25px;
+               h1 {
+                    font-size: 43px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: white;
+                    line-height: 56px;
+                    margin-bottom: 0;
+               }
+               p {
+                    color: white;
+                    font-size: 18px;
+                    font-weight: 400;
+                    margin: 7px 0;
+                    width: 70%;
+               }
+               .input_group {
+                    width: 80%;
+                    display: flex;
+                    input {
+                         height: 40px;
+                    }
+                    button {
+                         height: 40px;
+                         font-weight: 400;
+                         font-size: 16px;
+                         font-family: "Montserrat", sans-serif;
+                         padding: 0 23px;
+                         background-color: $blue;
+                         color: white;
+                    }
+               }
+          }
+          
+
+     
+
+     }
+
+     @media (min-width:1000px) and (max-width:1170px) {
+           .navbar{
+
+               padding: 0 3%;
+               .logo{
+                font-size: 19px;
+                white-space: nowrap;
+                img{
+                     width: 50px;
+                     height: 50px;
+ 
+                }
+               }
+ 
+               .nav-link {
+ 
+                a{
+                     font-size: 17px;
+                }
+               }
+           }
+          .header_block{
+               .left{
+                    width: 60%;
+                    .input_group{
+                         width: 90%;
+                    }
+                }
+          }
+          
+     }
+
+     @media (min-width:799px) and (max-width:1000px) {
+            .navbar{
+               padding: 0 1%;
+               .logo{
+                font-size: 16px;
+                white-space: nowrap;
+                img{
+                     width: 35px;
+                     height: 35px;
+ 
+                }
+               }
+ 
+               .nav-link {
+                    width: fit-content;
+ 
+                a{
+                     font-size: 16px;
+                     margin: 0 7px;
+                }
+                
+               }
+            }
+          .header_block{
+              .left{
+              width: 70%;
+              .input_group{
+                   width: 95%;
+              }
+          }  
+          }
+         
+     }
+
+     @media (min-width:577px) and (max-width:798px) {
+          padding: 0 24px;
+          .navbar{
+               padding: 0 5%;
+               .logo{
+                font-size: 22px;
+                white-space: nowrap;
+                img{
+                     width: 40px;
+                     height: 40px;
+ 
+                }
+               }
+ 
+               .nav-link {
+                   display: none;
+                
+               }
+               .right{
+                    .btn_auth{
+                         display: none;
+                    }
+                    .drop_menu{
+                         display: none;
+                    }
+                    
+                    .response_navbar{
+                         display: block;
+                         .menu_button{
+                              i{
+                                   font-size: 30px;
+                                   cursor: pointer;
+                                   transition:all 2s linear;
+                                   color: $black;
+                              }
+  
+                         }
+                         .user_menu{
+                              width: 50px;
+                              height: 50px;
+                              border-radius: 50%;
+                              cursor: pointer;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              position: relative;
+                              img{
+                                   width: 48px;
+                                   height: 48px;
+                                   border-radius: 50%;
+                              }
+                              .menu_toggle{
+                                   width: 48px;
+                                   height: 48px;
+                                   background-color: $blue;
+                                   border-radius: 50%;
+                                   position: absolute;
+                                   display: flex;
+                                   align-items: center;
+                                   justify-content: center;
+                                   font-size: 25px;
+                                   opacity: 0;
+                                   color: white;
+                                   transition: all .2s linear;
+
+                              }
+                              &:hover{
+                                   .menu_toggle{
+                                        opacity: 0.8;
+                                   }
+
+                              }
+
+
+
+                         }
+                         .nav_links{
+                              position: fixed;
+                              width: 100%;
+                              height: 100%;
+                              background-color: white;
+                              top: 80px;
+                              right: -100%;
+                              text-align: center;
+                              transition: all 0.3s linear;
+                              .user_info{
+                                   width: fit-content;
+                                   margin:20px auto;
+                                   cursor: pointer;
+                                   .user_name{
+                                        font-size: 19px;
+                                        font-weight: 400;
+                                        width: fit-content;
+                                        line-height: 18px;
+                                        color: $black;
+                                        position: relative;
+
+                                   }
+                              }
+
+                              a {
+                                   font-size: 19px;
+                                   font-weight: 400;
+                                   width: fit-content;
+                                   margin: 20px auto;
+                                   line-height: 18px;
+                                   color: $gray;
+                                   position: relative;
+                                   display: block;
+                                   &::after{
+                                        content: '';
+                                        width: 0;
+                                        height: 2px;
+                                        background-color: $blue;
+                                        position: absolute;
+                                        bottom: -10px;
+                                        opacity: 0.6;
+                                        left: 0;
+                                        transition: 0.3s;
+                                   }
+                                   &:hover{
+               
+                                        &::after{
+                                             width: 100%;
+               
+                                        }
+               
+                                   }
+                              }
+                              button{
+                                   display: block;
+                                   margin:20px auto;
+                                   height: 40px;
+                                   font-weight: 400;
+                                   font-size: 16px;
+                                   font-family: "Montserrat", sans-serif;
+                                   padding: 0 23px;
+                                   border-radius: 8px;
+                                   background-color: $blue;
+                                   color: white;
+                                   &:first-child {
+                                        margin-right: 20px;
+                                        color: $black;
+                                        background-color: transparent !important;
+                                   }
+
+                              }
+                              .btn{
+                                   margin:20px auto;
+                                   height: 40px;
+                                   font-weight: 400;
+                                   font-size: 16px;
+                                   font-family: "Montserrat", sans-serif;
+                                   padding: 0 23px;
+                                   border-radius: 8px;
+                                        color: $black;
+                                        background-color: transparent !important;
+                              }
+                         }
+                         .active_menu{
+                              right: 0;
+                              overflow: hidden;
+                         }
+                    }
+               }
+          }
+          .header_block{
+               .left{
+                    width: 90%;
+                    .input_group{
+                         width: 95%;
+                    }
+                }
+          }
+
+     }
+
+
+
+     @media (min-width:400px) and (max-width:576px) {
+          padding: 0 24px;
+          .navbar{
+               padding: 0 5%;
+               .logo{
+                font-size: 22px;
+                white-space: nowrap;
+                img{
+                     width: 40px;
+                     height: 40px;
+ 
+                }
+               }
+ 
+               .nav-link {
+                   display: none;
+                
+               }
+               .right{
+                    .btn_auth{
+                         display: none;
+                    }
+                    .drop_menu{
+                         display: none;
+                    }
+                    
+                    .response_navbar{
+                         display: block;
+                         .menu_button{
+                              i{
+                                   font-size: 30px;
+                                   cursor: pointer;
+                                   transition:all 2s linear;
+                                   color: $black;
+                              }
+  
+                         }
+                         .user_menu{
+                              width: 50px;
+                              height: 50px;
+                              border-radius: 50%;
+                              cursor: pointer;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              position: relative;
+                              img{
+                                   width: 48px;
+                                   height: 48px;
+                                   border-radius: 50%;
+                              }
+                              .menu_toggle{
+                                   width: 48px;
+                                   height: 48px;
+                                   background-color: $blue;
+                                   border-radius: 50%;
+                                   position: absolute;
+                                   display: flex;
+                                   align-items: center;
+                                   justify-content: center;
+                                   font-size: 25px;
+                                   opacity: 0;
+                                   color: white;
+                                   transition: all .2s linear;
+
+                              }
+                              &:hover{
+                                   .menu_toggle{
+                                        opacity: 0.8;
+                                   }
+
+                              }
+
+
+
+                         }
+                         .nav_links{
+                              position: fixed;
+                              width: 100%;
+                              height: 100%;
+                              background-color: white;
+                              top: 80px;
+                              right: -100%;
+                              text-align: center;
+                              transition: all 0.3s linear;
+                              .user_info{
+                                   width: fit-content;
+                                   margin:20px auto;
+                                   cursor: pointer;
+                                   .user_name{
+                                        font-size: 19px;
+                                        font-weight: 400;
+                                        width: fit-content;
+                                        line-height: 18px;
+                                        color: $black;
+                                        position: relative;
+
+                                   }
+                              }
+
+                              a {
+                                   font-size: 19px;
+                                   font-weight: 400;
+                                   width: fit-content;
+                                   margin: 20px auto;
+                                   line-height: 18px;
+                                   color: $gray;
+                                   position: relative;
+                                   display: block;
+                                   &::after{
+                                        content: '';
+                                        width: 0;
+                                        height: 2px;
+                                        background-color: $blue;
+                                        position: absolute;
+                                        bottom: -10px;
+                                        opacity: 0.6;
+                                        left: 0;
+                                        transition: 0.3s;
+                                   }
+                                   &:hover{
+               
+                                        &::after{
+                                             width: 100%;
+               
+                                        }
+               
+                                   }
+                              }
+                              button{
+                                   display: block;
+                                   margin:20px auto;
+                                   height: 40px;
+                                   font-weight: 400;
+                                   font-size: 16px;
+                                   font-family: "Montserrat", sans-serif;
+                                   padding: 0 23px;
+                                   border-radius: 8px;
+                                   background-color: $blue;
+                                   color: white;
+                                   &:first-child {
+                                        margin-right: 20px;
+                                        color: $black;
+                                        background-color: transparent !important;
+                                   }
+
+                              }
+                              .btn{
+                                   margin:20px auto;
+                                   height: 40px;
+                                   font-weight: 400;
+                                   font-size: 16px;
+                                   font-family: "Montserrat", sans-serif;
+                                   padding: 0 23px;
+                                   border-radius: 8px;
+                                        color: $black;
+                                        background-color: transparent !important;
+                              }
+                         }
+                         .active_menu{
+                              right: 0;
+                              overflow: hidden;
+                         }
+                    }
+               }
+          }
+          .header_block{
+               .left{
+                    width: 95%;
+                    h1{
+                         font-size: 25px;
+                    }
+                    .input_group{
+                         width: 95%;
+                    }
+                }
+          }
+
+     }
+
+     @media (min-width:0) and (max-width:399px) {
+          padding: 0 15px;
+          .navbar{
+               padding: 0 5%;
+               .logo{
+                font-size: 20px;
+                white-space: nowrap;
+                img{
+                     width: 38px;
+                     height: 38px;
+ 
+                }
+               }
+ 
+               .nav-link {
+                   display: none;
+                
+               }
+               .right{
+                    .btn_auth{
+                         display: none;
+                    }
+                    .drop_menu{
+                         display: none;
+                    }
+                    
+                    .response_navbar{
+                         display: block;
+                         .menu_button{
+                              i{
+                                   font-size: 30px;
+                                   cursor: pointer;
+                                   transition:all 2s linear;
+                                   color: $black;
+                              }
+  
+                         }
+                         .user_menu{
+                              width: 50px;
+                              height: 50px;
+                              border-radius: 50%;
+                              cursor: pointer;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              position: relative;
+                              img{
+                                   width: 48px;
+                                   height: 48px;
+                                   border-radius: 50%;
+                              }
+                              .menu_toggle{
+                                   width: 48px;
+                                   height: 48px;
+                                   background-color: $blue;
+                                   border-radius: 50%;
+                                   position: absolute;
+                                   display: flex;
+                                   align-items: center;
+                                   justify-content: center;
+                                   font-size: 25px;
+                                   opacity: 0;
+                                   color: white;
+                                   transition: all .2s linear;
+
+                              }
+                              &:hover{
+                                   .menu_toggle{
+                                        opacity: 0.8;
+                                   }
+
+                              }
+
+
+
+                         }
+                         .nav_links{
+                              position: fixed;
+                              width: 100%;
+                              height: 100%;
+                              background-color: white;
+                              top: 80px;
+                              right: -100%;
+                              text-align: center;
+                              transition: all 0.3s linear;
+                              .user_info{
+                                   width: fit-content;
+                                   margin:20px auto;
+                                   cursor: pointer;
+                                   .user_name{
+                                        font-size: 19px;
+                                        font-weight: 400;
+                                        width: fit-content;
+                                        line-height: 18px;
+                                        color: $black;
+                                        position: relative;
+
+                                   }
+                              }
+
+                              a {
+                                   font-size: 19px;
+                                   font-weight: 400;
+                                   width: fit-content;
+                                   margin: 20px auto;
+                                   line-height: 18px;
+                                   color: $gray;
+                                   position: relative;
+                                   display: block;
+                                   &::after{
+                                        content: '';
+                                        width: 0;
+                                        height: 2px;
+                                        background-color: $blue;
+                                        position: absolute;
+                                        bottom: -10px;
+                                        opacity: 0.6;
+                                        left: 0;
+                                        transition: 0.3s;
+                                   }
+                                   &:hover{
+               
+                                        &::after{
+                                             width: 100%;
+               
+                                        }
+               
+                                   }
+                              }
+                              button{
+                                   display: block;
+                                   margin:20px auto;
+                                   height: 40px;
+                                   font-weight: 400;
+                                   font-size: 16px;
+                                   font-family: "Montserrat", sans-serif;
+                                   padding: 0 23px;
+                                   border-radius: 8px;
+                                   background-color: $blue;
+                                   color: white;
+                                   &:first-child {
+                                        margin-right: 20px;
+                                        color: $black;
+                                        background-color: transparent !important;
+                                   }
+
+                              }
+                              .btn{
+                                   margin:20px auto;
+                                   height: 40px;
+                                   font-weight: 400;
+                                   font-size: 16px;
+                                   font-family: "Montserrat", sans-serif;
+                                   padding: 0 23px;
+                                   border-radius: 8px;
+                                        color: $black;
+                                        background-color: transparent !important;
+                              }
+                         }
+                         .active_menu{
+                              right: 0;
+                              overflow: hidden;
+                         }
+                    }
+               }
+          }
+          .header_block{
+               .left{
+                    width: 100%;
+                    padding-left: 30px;
+                    h1{
+                         font-size: 20px;
+                    }
+                    p{
+                         width: 95%;
+
+                    }
+                    .input_group{
+                         width: 95%;
+                    }
+                }
+          }
+
+     }
+
+     
+}
+
+
+.text_menu{
+     width: fit-content;
+     height: 43px;
+     font-size: 14px;
+     font-weight: 400;
+     line-height: 18px;
+     color: $gray;
+     padding-left: 10px;
+     padding-right: 10px;
+     display: flex;
+          align-items: center;
+     .user_name{
+          font-size: 14px;
+          
+          color: rgba(0, 0, 0, 0.85);
+          font-weight: 500; 
+     }
+     .status{
+          font-size: 14px;
+          color: #757575;
+          font-weight: 400; 
+     }
+}
+.exit_text{
+     width: fit-content;
+     height: 43px;
+     font-size: 14px;
+     font-weight: 400;
+     line-height: 18px;
+     color: $gray;
+     display: flex;
+     padding-left: 10px;
+     padding-right: 10px;
+     align-items: center;
+     &:hover{
+          color: $blue;
+     }
+}
+
+
+.shadow{
+     box-shadow: -1px 21px 24px -8px rgba(70, 72, 73, 0.233);
+}

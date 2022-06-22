@@ -1,0 +1,154 @@
+.feedbeack {
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-top: 6%;
+     padding-bottom: 6%;
+     .left {
+          width: 38%;
+          background-image: url("https://www.mymcmurray.com/wp-content/blogs.dir/sites/11/2022/02/istockphoto-1202697044-612x612-1.jpg");
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          height: 500px;
+          border-radius: 20px;
+          position: relative;
+          i {
+               font-size: 140px;
+               position: absolute;
+               top: -21%;
+               right: 30%;
+               color: #ecf0fb;
+          }
+     }
+     .right {
+          width: 40%;
+          .title {
+               font-weight: 600;
+               font-size: 35px;
+               color: $black;
+          }
+          .line {
+               width: 20%;
+               height: 5px;
+               background-color: $blue;
+               border-radius: 10px;
+               margin: 2rem 0;
+          }
+          .message {
+               .user {
+                    display: flex;
+                    align-items: center;
+                    img {
+                         width: 60px;
+                         height: 60px;
+                         border-radius: 50%;
+                    }
+                    .user_name {
+                         font-size: 20px;
+                         font-weight: 600;
+                         color: $black;
+                         margin-left: 15px;
+                    }
+               }
+               .text {
+                    width: 90%;
+                    margin-top: 20px;
+                    font-weight: 500;
+                    font-size: 17px;
+                    color: $gray;
+               }
+               .footer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 4%;
+                    .stars {
+                         i {
+                              color: gold;
+                              font-size: 20px;
+                              margin-right: 5px;
+                         }
+                    }
+                    .right {
+                         i {
+                              font-size: 28px;
+                              cursor: pointer;
+                              color: $blue;
+                              margin: 0 10px;
+                         }
+                    }
+               }
+          }
+     }
+
+     @media (min-width:577px) and (max-width:798px) {
+          padding: 24px;
+          .right{
+               width: 55%;
+
+               .title{
+                    font-size: 28px;
+               }
+          }
+          
+      }
+      @media (min-width:400px) and (max-width:576px) {
+          padding: 24px;
+          flex-wrap: wrap;
+          .left{
+               width: 100%;
+               margin-top: 20px;
+          }
+          .right{
+               width: 100%;
+               margin-top: 20px;
+
+
+               .title{
+                    font-size: 25px;
+
+               }
+               .message {
+                    width: 100%;
+                    .footer{
+                         width: 100%;
+                         .stars{
+                              width: 70%;
+                         }
+                    }
+               }
+          }
+          
+      }
+
+      @media (min-width:0) and (max-width:399px) {
+          padding: 15px;
+          flex-wrap: wrap;
+          .left{
+               width: 100%;
+               margin-top: 40px;
+          }
+          .right{
+               width: 100%;
+               margin-top: 20px;
+
+
+               .title{
+                    font-size: 25px;
+
+               }
+               .message {
+                    width: 100%;
+                    .footer{
+                         width: 100%;
+                         .stars{
+                              width: 90%;
+                         }
+                    }
+               }
+          }
+          
+      }
+}

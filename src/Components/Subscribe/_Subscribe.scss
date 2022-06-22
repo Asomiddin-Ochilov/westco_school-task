@@ -1,0 +1,88 @@
+.subscribe {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding-top: 6%;
+     padding-bottom: 6%;
+
+     .form {
+          width: 50%;
+          text-align: center;
+
+          .status {
+               font-weight: 600;
+               font-size: 35px;
+               color: $black;
+          }
+          .text {
+               font-size: 16px;
+               color: $gray;
+               font-weight: 500;
+               margin: 1rem 0;
+          }
+
+          button {
+               height: 40px;
+               background-color: $blue;
+               color: white;
+               border-radius: 5px;
+               padding: 0 20px;
+               font-size: 16px;
+          }
+     }
+
+     @media (min-width:577px) and (max-width:798px) {
+         .form{
+          width: 80%;
+         }
+ 
+      }
+
+      @media (min-width:400px) and (max-width:576px) {
+          padding: 24px;
+          .form{
+           width: 80%;
+           .status{
+               font-size: 25px;
+           }
+          }
+  
+       }
+       @media (min-width:0) and (max-width:399px) {
+          padding: 15px;
+          .form{
+           width: 80%;
+           .status{
+               font-size: 25px;
+           }
+          }
+  
+       }
+}
+
+.modal {
+     input {
+          margin: 10px 0;
+          height: 40px;
+     }
+     .phone_number {
+          margin-bottom: 10px !important;
+          height: 50px;
+          input {
+               height: auto;
+          }
+     }
+}
+
+.ant-modal-footer {
+     .ant-btn-primary {
+          background: $blue !important;
+          border-color: $blue !important;
+     }
+
+     .ant-btn-default {
+          border-color: $blue !important;
+          color: $blue !important;
+     }
+}

@@ -1,0 +1,244 @@
+.footer_page {
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-top: 3%;
+     padding-bottom: 3%;
+     background-color: #ecf0fb;
+     .left {
+          width: 100%;
+          .logo {
+               font-weight: 700;
+               color: $blue;
+               font-size: 28px;
+               display: flex;
+               align-items: center;
+               margin-bottom: 10px;
+               img {
+                    width: 60px;
+                    height: 60px;
+                    margin-right: 10px;
+               }
+          }
+          .text {
+               font-weight: 500;
+               font-size: 17px;
+               color: $black;
+          }
+
+          .footer{
+               width: 100%;
+               display: flex;
+               justify-content: space-between;
+               .links {
+                    .status {
+                         font-weight: 600;
+                         font-size: 35px;
+                         color: $black;
+                    }
+                    a {
+                         margin-top: 1rem;
+                         width: 50px;
+                         height: 50px;
+                         border-radius: 4px;
+                         background-color: white;
+                         color: $blue;
+                         font-size: 20px;
+                         display: inline-flex;
+                         align-items: center;
+                         justify-content: center;
+                         margin-right: 16px;
+                    }
+               }
+
+               .contacts{
+                    .status {
+                         font-weight: 600;
+                         font-size: 35px;
+                         color: $black;
+                    }
+                    .group {
+                         display: flex;
+                         .item {
+                              display: flex;
+                              align-items: center;
+                              i {
+                                   font-size: 18px;
+                                   margin: 0 14px;
+                                   color: $blue;
+                                   &.bi-geo-alt-fill {
+                                        margin-left: 0;
+                                   }
+                              }
+                              color: $black;
+                              font-size: 17px;
+                         }
+                    }
+               }
+
+               
+
+               
+          }
+         
+     }
+
+
+     @media (min-width:1000px) and (max-width:1170px) {
+          .left{
+               .footer{
+                    .links{
+                         .status{
+                              font-size: 28px;
+                         }
+                    }
+                    .contacts {
+                         .status {
+                              font-size: 28px;
+                         }
+                    }
+               }
+          }
+         
+     }
+
+     @media (min-width:799px) and (max-width:1000px) {
+
+          .left{
+               .footer{
+                    flex-wrap: wrap;
+                    .links{
+                         .status{
+                              font-size: 28px;
+                         }
+                    }
+                    .contacts {
+                         margin-top: 15px;
+                         .status {
+                              font-size: 28px;
+                         }
+                        
+                    }
+               }
+          }
+         
+     }
+
+     @media (min-width:577px) and (max-width:598px) {
+         padding: 24px;
+          .left{
+               .footer{
+                    flex-wrap: wrap;
+                    .links{
+                         .status{
+                              font-size: 20px;
+                         }
+                    }
+                    .contacts {
+                         margin-top: 15px;
+                         .status {
+                              font-size: 20px;
+                         }
+                         .group{
+                              justify-content: space-between;
+                              .item{
+                                   font-size: 15px;
+                              }
+                         }
+                         
+                    }
+               }
+          }
+         
+     }
+
+     @media (min-width:400px) and (max-width:576px) {
+          padding: 24px;
+           .left{
+                .footer{
+                     flex-wrap: wrap;
+                     justify-content: center;
+                     text-align: center;
+                     .links{
+                         margin: auto;
+                          .status{
+                               font-size: 20px;
+                          }
+                     }
+                     .contacts {
+                          margin-top: 15px;
+                          .status {
+                               font-size: 20px;
+                          }
+                          .group{
+                               justify-content: space-between;
+                               flex-wrap: wrap;
+                               .item{
+                                   width: 90%;
+                                   margin: auto;
+                                   text-align: center;
+                                   justify-content: center;
+                                    font-size: 15px;
+                               }
+                          }
+                          
+                     }
+                }
+           }
+          
+      }
+      @media (min-width:0) and (max-width:399px) {
+          padding: 15px;
+           .left{
+               .logo{
+
+                    font-size: 25px;
+                    img{
+                         width: 40px;
+                         height: 40px;
+                    }
+
+               }
+               .text{
+                    font-size: 17px;
+
+               }
+                .footer{
+                     flex-wrap: wrap;
+                     justify-content: center;
+                     text-align: center;
+                     .links{
+                         margin: auto;
+                         justify-content: center;
+                         a{
+                              margin: 15px;
+                         }
+                          .status{
+                               font-size: 20px;
+                          }
+                     }
+                     .contacts {
+                          margin-top: 15px;
+                          .status {
+                               font-size: 20px;
+                          }
+                          .group{
+                               justify-content: space-between;
+                               flex-wrap: wrap;
+                               .item{
+                                   width: 90%;
+                                   margin: auto;
+                                   text-align: center;
+                                   justify-content: center;
+                                    font-size: 15px;
+                               }
+                          }
+                          
+                     }
+                }
+           }
+          
+      }
+
+}
