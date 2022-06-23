@@ -3,8 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import Fade from "react-reveal/Fade";
 import { Modal, Button } from "antd";
 import { getUserCourses } from "../../../../Redux/ApiCalls/user/courses";
-import {  getUserCoursesData } from "../../../../Redux/Reducers/user/courses";
+import { getUserCoursesData } from "../../../../Redux/Reducers/user/courses";
 import Loader from "../../../../Components/Loader";
+import { baseURL } from "./../../../../Redux/ApiCalls/baseUrl";
 const CoursesPage = () => {
   const courses = useSelector((state) => state.CoursesReducer.coursesUser);
   const [coursItem, setCoursItem] = useState("");
@@ -37,11 +38,15 @@ const CoursesPage = () => {
               <Fade bottom key={index}>
                 <div onClick={() => changeOpenCourses(item)} className="card">
                   <img
-                    src={item?.imgUrl}
+                    src={
+                      item?.imgUrl.startsWith("img/img")
+                        ? baseURL + item?.imgUrl
+                        : item?.imgUrl
+                    }
                     alt=""
                     onError={(e) => {
                       e.target.src =
-                        "https://it-park.uz/storage/images/news/normal/VADM3z4ZsQxx3Rpu9qUH3gNtuXd6iYIzaOcjHXln.jpg";
+                        "https://beoe.gov.pk/uploads/complaints/results/default/sample.jpg";
                     }}
                   />
                   <footer>

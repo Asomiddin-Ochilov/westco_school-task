@@ -7,7 +7,19 @@ export const getAllBooksData = async (history) => {
     headers: { Authorization: `Bearer ${token}` },
   };
   return await api.get("/employee/book?limit=5&page=1", config).catch((err) => {
-    alert(err.message);
+    toast.error(err.message);
+    history.push("/");
+  });
+};
+
+export const getOneBookData = async (history, id, setLoading) => {
+  const token = localStorage.getItem("token");
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+  return await api.get(`/user/book/${id}`, config).catch((err) => {
+    toast.error(err.message);
+    setLoading(false);
     history.push("/");
   });
 };

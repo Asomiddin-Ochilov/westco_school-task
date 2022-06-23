@@ -40,6 +40,7 @@ const Login = () => {
           setLoading(false);
           localStorage.setItem("token", res.data.data.token);
           localStorage.setItem("type", "user");
+         
           dispatch(getUser(res.data.data.user));
           history.push(`/user/${res?.data?.data?.user?._id}`);
         });
@@ -48,6 +49,7 @@ const Login = () => {
           setLoading(false);
           localStorage.setItem("token", res.data.data.token);
           localStorage.setItem("type", "admin");
+          localStorage.setItem("id", res?.data?.data?.employee?._id);
           dispatch(getAdmin(res.data.data.employee));
           history.push(`/admin/${res?.data?.data?.employee?._id}`);
         });

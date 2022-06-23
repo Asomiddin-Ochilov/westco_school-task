@@ -2,14 +2,14 @@ import { Button } from "antd";
 import React, { useState, useEffect } from "react";
 import Fade from "react-reveal/Fade";
 import { toast } from "react-toastify";
-
+import { baseURL } from "../../../../Redux/ApiCalls/baseUrl";
 import Loader from "../../../../Components/Loader";
 import { getAllUserData } from "../../../../Redux/ApiCalls/admin/user";
 const UsersPage = () => {
   const [pageLoad, setPageLoad] = useState(true);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
-
+  
   useEffect(() => {
     getAllUserData(setLoading).then((res) => {
       const { data } = res.data.data;
@@ -17,7 +17,6 @@ const UsersPage = () => {
       setPageLoad(false);
     });
   }, []);
-
 
   return (
     <div className="courses_page page_position">
@@ -28,13 +27,10 @@ const UsersPage = () => {
               <Fade bottom key={index}>
                 <div className="card">
                   <img
-                    src={
-                      "https://johannesippen.com/img/blog/humans-not-users/header.jpg"
-                    }
                     alt=""
                     onError={(e) => {
                       e.target.src =
-                        "https://it-park.uz/storage/images/news/normal/VADM3z4ZsQxx3Rpu9qUH3gNtuXd6iYIzaOcjHXln.jpg";
+                        "https://beoe.gov.pk/uploads/complaints/results/default/sample.jpg";
                     }}
                   />
                   <footer>

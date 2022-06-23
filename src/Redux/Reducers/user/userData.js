@@ -18,6 +18,7 @@ export const userDataReducer = createSlice({
   reducers: {
     setUserData: (state, action) => {
       state.userData = action.payload;
+      
       if (action.payload) {
         state.isAuth = true;
       } else {

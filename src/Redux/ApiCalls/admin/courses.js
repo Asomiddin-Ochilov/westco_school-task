@@ -7,7 +7,7 @@ export const updateCoursData = async (setLoading, data, toas) => {
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-  return await api.put("/employee/courseParts", data, config).catch((err) => {
+  return await api.put("/employee/course", data, config).catch((err) => {
     toast.update(toas, {
       render: "Something went wrong",
       type: "error",
@@ -23,7 +23,7 @@ export const deleteCoursData = async (setLoading, id, toas) => {
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-  return await api.delete(`/employee/courseParts/${id}`, config).catch((err) => {
+  return await api.delete(`/employee/course/${id}`, config).catch((err) => {
     toast.update(toas, {
       render: "Something went wrong",
       type: "error",
@@ -39,7 +39,7 @@ export const createCoursData = async (setLoading, data, toas) => {
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-  return await api.post("/employee/courseParts", data, config).catch((err) => {
+  return await api.post("/employee/course", data, config).catch((err) => {
     toast.update(toas, {
       render: "Something went wrong",
       type: "error",

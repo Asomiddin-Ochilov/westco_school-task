@@ -12,6 +12,9 @@ import {
 import Loader from "../../../../Components/Loader";
 import { Modal, Input } from "antd";
 import { createCoursData } from "./../../../../Redux/ApiCalls/admin/courses";
+import { baseURL } from "../../../../Redux/ApiCalls/baseUrl";
+import axios from "axios";
+import { upLoadImg } from "../../../../Redux/ApiCalls/upload";
 const CoursesPage = () => {
   const [pageLoad, setPageLoad] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -32,7 +35,6 @@ const CoursesPage = () => {
   const changeEditCourses = (item) => {
     setIsModal(true);
     setCoursItem(item);
-    
   };
 
   const deleteCourses = (id) => {
@@ -68,11 +70,15 @@ const CoursesPage = () => {
                 <Fade bottom key={index}>
                   <div className="card">
                     <img
-                      src={item.imgUrl}
+                      src={
+                        item?.imgUrl.startsWith("img/img")
+                          ? baseURL + item?.imgUrl
+                          : item?.imgUrl
+                      }
                       alt=""
                       onError={(e) => {
                         e.target.src =
-                          "https://it-park.uz/storage/images/news/normal/VADM3z4ZsQxx3Rpu9qUH3gNtuXd6iYIzaOcjHXln.jpg";
+                          "https://beoe.gov.pk/uploads/complaints/results/default/sample.jpg";
                       }}
                     />
                     <footer>
@@ -120,17 +126,23 @@ const ModalPage = ({
 }) => {
   const handleCancel = () => {
     setIsModalVisible(false);
+    setCoursItem("");
+    setCoursItem("");
+    setCoursesName("");
+    setDescription("");
+    setImgUrl("");
+    setVideoUrl("");
   };
-  const [coursesName, setCoursesName] = useState(coursItem?.name);
+  const [coursesName, setCoursesName] = useState("");
   const [coursesNameError, setCoursesNameError] = useState("");
   const [videoUrl, setVideoUrl] = useState("");
   const [videoUrlError, setVideoUrlError] = useState("");
-  const [description, setDescription] = useState(coursItem?.description);
+  const [description, setDescription] = useState("");
   const [descriptionError, setDescriptionError] = useState("");
-  const [imgUrl, setImgUrl] = useState(coursItem?.imgUrl);
+  const [imgUrl, setImgUrl] = useState("");
   const [imgUrlError, setImgUrlError] = useState("");
   const [loading, setLoading] = useState(false);
-
+  console.log(coursItem);
   const changeCoursesName = (e) => {
     setCoursesName(e);
     if (coursesName.length > 3) {
@@ -150,12 +162,21 @@ const ModalPage = ({
   };
 
   const changeImgUrl = (e) => {
-    setImgUrl(e);
-    if (imgUrl.length > 3) {
-      setImgUrlError("");
-    } else {
-      setImgUrlError("error");
-    }
+    const formData = new FormData();
+    console.log(e);
+    formData.append("file", e.target.files[0]);
+    formData.append("type", "img");
+    const toas = toast.loading("Please wait...");
+    upLoadImg(toas, formData).then((res) => {
+      console.log(res);
+      toast.update(toas, {
+        render: "All is good",
+        type: "success",
+        isLoading: false,
+        autoClose: 1000,
+      });
+      setImgUrl(res.data.data);
+    });
   };
 
   const changeDescription = (e) => {
@@ -173,22 +194,18 @@ const ModalPage = ({
       setCoursesNameError("error");
     } else if (videoUrl.length < 5) {
       setVideoUrlError("error");
-    } else if (imgUrl.length < 5) {
-      setImgUrlError("error");
     } else if (description.length < 5) {
       setDescriptionError("error");
     } else {
       if (coursItem) {
         setLoading(true);
-        const obj = {
-          _id: coursItem._id,
-          value: coursesName,
-          videoUrl: videoUrl,
-          description: description,
-          imgUrl: imgUrl,
-        };
+        const formData = new FormData();
+        formData.append("name", coursesName);
+        formData.append("videoUrl", videoUrl);
+        formData.append("description", description);
+        formData.append("imgUrl", imgUrl);
         const toas = toast.loading("Please wait...");
-        updateCoursData(setLoading, obj, toas).then((res) => {
+        updateCoursData(setLoading, formData, toas).then((res) => {
           setLoading(false);
           const { data } = res.data;
           setCoursItem("");
@@ -206,14 +223,14 @@ const ModalPage = ({
         });
       } else {
         setLoading(true);
-        const obj = {
-          value: coursesName,
-          videoUrl: videoUrl,
-          description: description,
-          imgUrl: imgUrl,
-        };
+        const formData = new FormData();
+        formData.append("name", coursesName);
+        formData.append("videoUrl", videoUrl);
+        formData.append("description", description);
+        formData.append("imgUrl", imgUrl);
+
         const toas = toast.loading("Please wait...");
-        createCoursData(setLoading, obj, toas).then((res) => {
+        createCoursData(setLoading, formData, toas).then((res) => {
           setLoading(false);
           const { data } = res.data;
           setCoursItem("");
@@ -250,7 +267,7 @@ const ModalPage = ({
             <Input
               type={"text"}
               status={coursesNameError}
-              value={coursesName}
+              value={coursItem.name ? coursItem.name : coursesName}
               onChange={(e) => changeCoursesName(e.target.value)}
               placeholder="example"
             />
@@ -262,20 +279,19 @@ const ModalPage = ({
               className="input"
               type={"text"}
               status={videoUrlError}
-              value={videoUrl}
+              value={coursItem.videoUrl ? coursItem.videoUrl : videoUrl}
               onChange={(e) => changeVideoUrl(e.target.value)}
               placeholder="example"
             />
           </div>
 
           <div className="item">
-            <div className="label font">Img UrL</div>
-            <Input
+            <div className="label font">Img Upload</div>
+            <input
               className="input"
-              type={"text"}
-              status={imgUrlError}
-              value={imgUrl}
-              onChange={(e) => changeImgUrl(e.target.value)}
+              type={"file"}
+              accept="image/*"
+              onChange={(e) => changeImgUrl(e)}
               placeholder="example"
             />
           </div>
@@ -286,7 +302,9 @@ const ModalPage = ({
               className="input"
               type={"text"}
               status={descriptionError}
-              value={description}
+              value={
+                coursItem.description ? coursItem.description : description
+              }
               defaultValue={coursItem.description}
               onChange={(e) => changeDescription(e.target.value)}
               placeholder="example"

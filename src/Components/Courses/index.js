@@ -3,6 +3,7 @@ import { Modal , Button } from "antd";
 import Fade from "react-reveal/Fade";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { baseURL } from './../../Redux/ApiCalls/baseUrl';
 const Courses = () => {
   const courses = useSelector((state) => state.getAllData.courses.data);
   const isAuth = useSelector((state) => state.userDataReducer.isAuth);
@@ -34,11 +35,11 @@ const Courses = () => {
               <Fade bottom key={index}>
                 <div onClick={() => changeOpenCourses(item)} className="card">
                   <img
-                    src={item?.imgUrl}
+                    src={item?.imgUrl.startsWith('img/img') ?  baseURL + item?.imgUrl : item?.imgUrl}
                     alt=""
                     onError={(e) => {
                       e.target.src =
-                        "https://it-park.uz/storage/images/news/normal/VADM3z4ZsQxx3Rpu9qUH3gNtuXd6iYIzaOcjHXln.jpg";
+                        "https://beoe.gov.pk/uploads/complaints/results/default/sample.jpg";
                     }}
                   />
                   <footer>

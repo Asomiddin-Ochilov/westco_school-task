@@ -4,7 +4,8 @@ import SignUp from "./Components/Auth/SingUp";
 import ErrorPage from "./Components/ErrorsPage";
 import Pages from "./Pages";
 import UserPage from "./Pages/UserPage";
-import AdminPage from './Pages/AdminPage/index';
+import AdminPage from "./Pages/AdminPage/index";
+import OnePage from "./Pages/oneBookPage/index";
 function App() {
   return (
     <div className="app">
@@ -15,6 +16,7 @@ function App() {
         <Route path={"/errors"} component={ErrorPage} />
         <Route path={"/user/:id"} component={UserPage} />
         <Route path={"/admin/:id"} component={AdminPage} />
+        <Route path={"/book/:id"} component={OnePage} />
         <Redirect to={"/errors"} />
       </Switch>
     </div>

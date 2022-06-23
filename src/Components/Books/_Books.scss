@@ -60,9 +60,14 @@
                     padding-top: 15px;
                     padding-left: 20px;
                     .date {
+                         width: 90%;
                          font-size: 15px;
                          font-weight: 500;
                          color: $gray;
+                         height: 45px;
+                         text-overflow: ellipsis;
+                         white-space: wrap;
+                         overflow: hidden;
                     }
                     .status {
                          font-size: 18px;
